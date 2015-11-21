@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=12:30:00
+
+module load R
+
+echo hostname
+#cd /crucible/mc48o9p/hqin2/mactower-network-failure-simulation-master/ms02GINPPI
+cd /oasis/scratch/hongqin/temp_project/Slim-network-aging-bio386-fall-2015
+pwd
+
+R --vanilla --slave -f 20151101-net-sim-ginppi.R --args 0.001 0.0002 5 1.00 2000
+R --vanilla --slave -f 20151101-net-sim-ginppi.R --args 0.001 0.0002 5 0.99 2000
+R --vanilla --slave -f 20151101-net-sim-ginppi.R --args 0.001 0.0002 5 0.98 2000
+R --vanilla --slave -f 20151101-net-sim-ginppi.R --args 0.001 0.0002 5 0.95 2000
+R --vanilla --slave -f 20151101-net-sim-ginppi.R --args 0.001 0.0002 5 0.90 2000
+R --vanilla --slave -f 20151101-net-sim-ginppi.R --args 0.001 0.0002 5 0.85 2000
+R --vanilla --slave -f 20151101-net-sim-ginppi.R --args 0.001 0.0002 5 0.80 2000

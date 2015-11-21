@@ -7,6 +7,14 @@
 # 2013 Dec 20, merge DIP PPI and Genetic Inxt Net -> Multi-net approach
 rm(list=ls())
 
+myhost = 'gordon'  # 'byte' 'blacklight' 'mactower' 'greenfield'
+mydir = '/oasis/scratch/hongqin/temp_project/Slim-network-aging-bio386-fall-2015'
+#mydir = "/crucible/mc48o9p/hqin2/mactower-network-failure-simulation-master/ms02GINPPI"
+if (myhost == 'byte') {  mydir = "/Users/hqin/github/Slim-network-aging-bio386-fall-2015"
+} else if (myhost == 'helen') { mydir = "";  
+} 
+setwd(mydir)
+
 single_network_failure_v2b = function(lambda1, lambda2=lambda1/10, threshold=4, p, pairs, essenLookupTb ) {
   #updated 20151101
   # single network failure simulation, 20151013Tue
